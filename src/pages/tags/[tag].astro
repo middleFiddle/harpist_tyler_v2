@@ -1,9 +1,10 @@
 ---
 import PageLayout from '../../layouts/PageLayout.astro';
 import BlogPost from "../../components/atoms/BlogPost.astro"
+import type { GetStaticPaths } from "astro"
 
-export async function getStaticPaths() {
-  const allPosts = await Astro.glob("../posts/*.md")
+export const getStaticPaths = (async () => {
+  const allPosts: any[]  = await Astro.glob("../posts/*.md")  
   const uniqueTags = [...new Set(allPosts.map((post) => post.frontmatter.tags).flat())]
 
   return uniqueTags.map((tag) => {
@@ -13,10 +14,11 @@ export async function getStaticPaths() {
       props: {posts: filteredPosts} 
     }
   }) 
-}
+}) satisfies GetStaticPaths  
 
-const { tag } = Astro.params;
-const { posts } = Astro.props;
+
+const { tag } = Astro.params 
+const { posts } = Astro.props 
 ---
 <PageLayout pageTitle={tag}>
   <p>Posts tagged with {tag}</p>
