@@ -1,0 +1,16 @@
+---
+import Navigation from "../atoms/Navigation.astro"
+import Hamburger from "../atoms/Hamburger.astro"
+---
+
+<header>
+  <nav>
+    <Hamburger />
+    <Navigation />
+  </nav>
+  <script>
+    document.querySelector('.hamburger')?.addEventListener('click', () => {
+      document.querySelector('.nav-links')?.classList.toggle('expanded');
+    });
+  </script>
+</header>
