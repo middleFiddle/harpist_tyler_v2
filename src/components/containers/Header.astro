@@ -3,14 +3,15 @@ import Navigation from '../atoms/Navigation.astro'
 import Hamburger from '../atoms/Hamburger.astro'
 ---
 
-<header>
-	<nav>
+<header class="w-full">
+	<nav class="flex w-full flex-col items-center bg-slate-200">
+		<h1 class="text-6xl">Tyler Hartley</h1>
 		<Hamburger />
 		<Navigation />
 	</nav>
-	<script>
-		document.querySelector('.hamburger')?.addEventListener('click', () => {
-			document.querySelector('.nav-links')?.classList.toggle('expanded')
-		})
-	</script>
 </header>
+<script>
+	document.querySelector('.hamburger')?.addEventListener('click', () => {
+		document.querySelector('.nav-links')?.classList.toggle('expanded')
+	})
+</script>
