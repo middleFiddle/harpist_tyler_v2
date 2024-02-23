@@ -4,30 +4,30 @@ import Hamburger from '../atoms/Hamburger.astro'
 ---
 
 <header class="sticky top-0 w-full">
-	<nav class="relative flex w-full flex-row bg-zinc-50 py-2 sm:flex-col sm:items-center sm:gap-4">
-		<h1 class="w-full self-center text-center font-display text-2xl text-teal-600 sm:text-6xl">
-			Tyler Hartley, Atlanta Harpist
-		</h1>
-		<div class="fixed end-0 top-0">
-			<Hamburger />
-		</div>
-		<div class="fixed end-0 top-12 sm:static sm:flex sm:w-full sm:justify-center">
-			<Navigation />
-		</div>
-	</nav>
+  <nav class="relative flex w-full flex-row bg-zinc-50 py-2 sm:flex-col sm:items-center sm:gap-4">
+    <h1 class="w-full self-center text-center font-display text-2xl text-teal-600 sm:text-6xl">
+      Tyler Hartley, Atlanta Harpist
+    </h1>
+    <div class="fixed end-0 top-0">
+      <Hamburger />
+    </div>
+    <div class="fixed end-0 top-12 sm:static sm:flex sm:w-full sm:justify-center">
+      <Navigation />
+    </div>
+  </nav>
 </header>
 <script>
-	document.querySelector('#hamburger')?.addEventListener('click', () => {
-		document.querySelector('#nav-links')!.classList.toggle('hidden')
-		document.querySelector('#nav-links')!.classList.toggle('flex')
-	})
+  document.querySelector('#hamburger')?.addEventListener('click', () => {
+    document.querySelector('#nav-links')!.classList.toggle('hidden')
+    document.querySelector('#nav-links')!.classList.toggle('flex')
+  })
 </script>
 <style>
-	@font-face {
-		font-family: 'Saginaw';
-		src: url('/fonts/saginaw-4.woff') format('woff');
-		font-weight: normal;
-		font-style: normal;
-		font-display: swap;
-	}
+  @font-face {
+    font-family: 'Saginaw';
+    src: url('/fonts/saginaw-4.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
 </style>
